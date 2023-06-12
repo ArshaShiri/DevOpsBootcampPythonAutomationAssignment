@@ -12,3 +12,7 @@
 * Get all the IAM users in your AWS account
 * For each user, print out the name of the user and when they were last active (hint: Password Last Used attribute)
 * Print out the user ID and name of the user who was active the most recently
+
+**Solution:**
+
+`iam_in_aws.py`
