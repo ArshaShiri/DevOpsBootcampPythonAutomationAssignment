@@ -40,3 +40,7 @@ Write Python program which automatically creates EC2 instance, install Docker in
 * Get all the repositories in ECR
 * Print the name of each repository
 * Choose one specific repository and for that repository, list all the image tags inside, sorted by date. Where the most recent image tag is on top
+
+**Solution:**
+
+`ecr_in_aws.py`
