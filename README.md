@@ -66,3 +66,14 @@ Once all the above is configured, create a Jenkins Pipeline with the following s
 4. Run docker login to authenticate with ECR repository (using Python)
 5. Start the container from the selected image from step 2 on EC2 instance (using Python)
 6. Validate that the application was successfully started and is accessible by sending a request to the application (using Python)
+
+**Solution:**
+
+## ECR Creation
+
+![image](https://github.com/ArshaShiri/DevOpsBootcampPythonAutomationAssignment/assets/18715119/81f02b9b-7233-4af7-b160-006d0838623a)
+
+## Adding Docker Images to ECR
+
+We use the java maven application for this section.
+
