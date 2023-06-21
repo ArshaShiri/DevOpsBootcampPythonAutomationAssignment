@@ -108,3 +108,18 @@ We then install docker on the instance:
     newgrp docker
     sudo systemctl enable docker.service
     sudo systemctl start docker.service
+
+## Jenkins
+
+Jenkins server is created on digital ocean.
+
+We then need to install python dependencies on the container:
+
+    docker exec -it -u 0 a4d5473d982e bash
+    apt-get update
+    apt-get install python3
+    apt-get install pip
+    
+    pip install boto3
+    pip install paramiko
+    pip install requests
