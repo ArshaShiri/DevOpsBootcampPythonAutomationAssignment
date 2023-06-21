@@ -98,3 +98,13 @@ We use the java maven application for this section.
 A simple ec2 instance with the name of `java-maven-app` is created. A new key pair is also generated for this instance named `python-automation-assignment`. Make sure traffic is reachable to the instance:
 
 ![image](https://github.com/ArshaShiri/DevOpsBootcampPythonAutomationAssignment/assets/18715119/8e38b9ef-9716-499b-8ab0-428e6440aa59)
+
+We then install docker on the instance:
+
+    sudo yum update
+    sudo yum install docker
+    sudo usermod -a -G docker ec2-user
+    id ec2-user
+    newgrp docker
+    sudo systemctl enable docker.service
+    sudo systemctl start docker.service
