@@ -93,3 +93,6 @@ We use the java maven application for this section.
 
 ![image](https://github.com/ArshaShiri/DevOpsBootcampPythonAutomationAssignment/assets/18715119/cffe2857-7961-4bc8-9e60-115a0aa5d493)
 
+## Creating EC2 Instance
+
+A simple ec2 instance with the name of `java-maven-app` is created. A new key pair is also generated for this instance named `python-automation-assignment`. Make sure traffic is reachable to the instance:
