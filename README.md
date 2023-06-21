@@ -34,3 +34,9 @@ Write Python program which automatically creates EC2 instance, install Docker in
 * Make sure a key-pair is available for the ec2 instance. The private key is then used to connect to the server
 
 `running_and_monitoring_app_on_ec2.py`
+
+## EXERCISE 4: Working with ECR in AWS
+
+* Get all the repositories in ECR
+* Print the name of each repository
+* Choose one specific repository and for that repository, list all the image tags inside, sorted by date. Where the most recent image tag is on top
