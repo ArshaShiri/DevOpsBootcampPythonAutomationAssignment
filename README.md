@@ -91,3 +91,5 @@ We use the java maven application for this section.
     docker tag java-maven-app:latest 849690659475.dkr.ecr.eu-central-1.amazonaws.com/java-maven-app:tag_number
     docker push 849690659475.dkr.ecr.eu-central-1.amazonaws.com/java-maven-app:tag_number
 
+![image](https://github.com/ArshaShiri/DevOpsBootcampPythonAutomationAssignment/assets/18715119/cffe2857-7961-4bc8-9e60-115a0aa5d493)
+
