@@ -11,7 +11,7 @@ if len(repositories) == 0:
 for repo in repositories:
     print(f"Repository name: {repo['repositoryName']}")
 
-query_repository_name = "arsha"
+query_repository_name = "java-maven-app"
 
 images = ecr_client.describe_images(
         repositoryName=query_repository_name
@@ -25,6 +25,6 @@ for image in images['imageDetails']:
         'date': image['imagePushedAt']
     })
 
-sorted_images_based_on_date = sorted(image_tags.items(), key=lambda x:x[1], reverse=True)
+sorted_images_based_on_date = sorted(image_tags, key=itemgetter("date"), reverse=True)
 for image in sorted_images_based_on_date:
     print(image)

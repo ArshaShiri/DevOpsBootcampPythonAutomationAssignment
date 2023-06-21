@@ -77,3 +77,17 @@ Once all the above is configured, create a Jenkins Pipeline with the following s
 
 We use the java maven application for this section.
 
+    mvn clean package
+    mvn package
+
+    # 3 Images are build where in each image the message of the app has changed:
+    # image 1: Welcome to Java Maven Application
+    # image 2: Welcome to Java Maven Application 2
+    # image 3: Welcome to Java Maven Application 3
+
+    # Use the push commands example from AWS
+    aws ecr get-login-password --region eu-central-1 | docker login --username AWS --password-stdin 849690659475.dkr.ecr.eu-central-1.amazonaws.com
+    docker build -t java-maven-app .
+    docker tag java-maven-app:latest 849690659475.dkr.ecr.eu-central-1.amazonaws.com/java-maven-app:tag_number
+    docker push 849690659475.dkr.ecr.eu-central-1.amazonaws.com/java-maven-app:tag_number
+
