@@ -2,7 +2,6 @@
 
 pipeline {
     agent any
-    agent any
     environment {
 
         // Use by Boto3
