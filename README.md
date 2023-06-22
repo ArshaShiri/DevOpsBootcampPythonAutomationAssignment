@@ -128,6 +128,28 @@ Make sure the following credentials are defined:
 
     # Store these values as secrete text that is used by Boto3 to authenticate with AWS
     cat ~/.aws/credentials
+
+    # For authentication with ECRT, save the result in ecr-repo-pwd
+    aws ecr get-login-password --region eu-central-1
+    
     
 The credentials to access ec2 instance via ssh should also be added as `SSH Username with private key`
-![image](https://github.com/ArshaShiri/DevOpsBootcampPythonAutomationAssignment/assets/18715119/608626fd-e198-4e41-b14e-d92b08d21246)
+![image](https://github.com/ArshaShiri/DevOpsBootcampPythonAutomationAssignment/assets/18715119/e0791678-3d06-48c9-a408-4b70fa9de244)
+
+## Verification
+
+We can verify the correct image running on the ec2 server: 
+
+    [ec2-user@ip-172-31-41-130 ~]$ curl http://localhost:8080
+    
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>MyApp</title>
+    </head>
+    <body>
+    <h1>Welcome to Java Maven Application 2</h1>
+    <!-- add image here  <img src="" width="" /> -->
+    </body>
+    </html>
