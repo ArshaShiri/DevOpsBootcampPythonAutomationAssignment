@@ -21,6 +21,7 @@ stdin, stdout, stderr = ssh.exec_command(f"echo {docker_pwd} | docker login {doc
 print(stdout.readlines())
 stdin.close()
 
+print("Starting the container...")
 stdin, stdout, stderr = ssh.exec_command(f"docker run -p {host_port}:{container_port} -d {docker_image}")
 print(stdout.readlines())
 stdin.close()
