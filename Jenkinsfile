@@ -6,6 +6,8 @@ pipeline {
         // Used by get-images.py script
         ECR_REPO_NAME = 'java-maven-app'
 
+        ECR_REGISTRY = '849690659475.dkr.ecr.eu-central-1.amazonaws.com/java-maven-app'
+
         // Used by Boto3
         AWS_ACCESS_KEY_ID = credentials('jenkins_aws_access_key_id')
         AWS_SECRET_ACCESS_KEY = credentials('jenkins_aws_secret_access_key')
@@ -23,6 +25,10 @@ pipeline {
                   def tags = result.split('\n') as List
                   version_to_deploy = input message: 'Select version to deploy', ok: 'Deploy', parameters: [choice(name: 'Select version', choices: tags)]
                   echo "selected tag is: ${version_to_deploy}" 
+
+                  // Construct full docker image name
+                  env.DOCKER_IMAGE = "${ECR_REGISTRY}/${ECR_REPO_NAME}:${version_to_deploy}"
+                  echo "Seclected image is: ${env.DOCKER_IMAGE}"
                }
             }
         }
