@@ -3,19 +3,22 @@
 pipeline {
     agent any
     environment {
-        // Used by get-images.py and deploy.py script
+        // Used by get-images.py and deploy.py scripts
         ECR_REPO_NAME = 'java-maven-app'
 
         ECR_REGISTRY = '849690659475.dkr.ecr.eu-central-1.amazonaws.com'
 
-        // Used by deploy.py script
+        // Used by deploy.py and validate.py scripts
         EC2_SERVER = '3.121.196.12'
+        HOST_PORT = '8080'
+
+        // Used by deploy.py script
         EC2_USER = 'ec2-user'
         AWS_SSH_KEY = credentials('aws-ec2-ssh')
         DOCKER_USER = 'AWS'
         DOCKER_PWD = credentials('ecr-repo-pwd')
         CONTAINER_PORT = '8080'
-        HOST_PORT = '8080'
+        
 
         // Used by Boto3
         AWS_ACCESS_KEY_ID = credentials('jenkins_aws_access_key_id')
@@ -47,6 +50,16 @@ pipeline {
                 script {
                    echo 'Deploying selected docker image to EC2...'
                    def result = sh(script: 'python3 deploy.py', returnStdout: true).trim()
+                   echo result
+                }
+            }
+        }
+
+        stage('validate deployment') {
+            steps {
+                script {
+                   echo 'Validating that the application was deployed successfully...'
+                   def result = sh(script: 'python3 validate.py', returnStdout: true).trim()
                    echo result
                 }
             }
