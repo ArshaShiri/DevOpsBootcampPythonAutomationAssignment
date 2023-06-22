@@ -1,5 +1,4 @@
 import boto3
-import sys
 from operator import itemgetter
 
 ecr_client = boto3.client('ecr')

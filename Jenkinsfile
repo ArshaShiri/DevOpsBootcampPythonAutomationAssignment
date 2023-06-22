@@ -6,8 +6,9 @@ pipeline {
         stage('select image version') {
             steps {
                script {
-                  echo 'fetching available image versions'
+                  echo 'Fetching available image versions...'
                   def result = sh(script: 'python3 get-images.py', returnStdout: true).trim()
+                  echo result
                }
             }
         }
