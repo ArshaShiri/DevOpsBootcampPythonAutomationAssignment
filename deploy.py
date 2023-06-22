@@ -19,13 +19,14 @@ host_port = os.environ['HOST_PORT']
 
 stdin, stdout, stderr = ssh.exec_command(f"echo {docker_pwd} | docker login {docker_registry} --username {docker_user} --password-stdin")
 print(stdout.readlines())
+print(stderr.readlines())
+
 stdin.close()
 
-print("Starting the container...")
 stdin, stdout, stderr = ssh.exec_command(f"docker run -p {host_port}:{container_port} -d {docker_image}")
-print("After command run..")
-print(stderr.readlines())
 print(stdout.readlines())
+print(stderr.readlines())
+
 stdin.close()
 
 
