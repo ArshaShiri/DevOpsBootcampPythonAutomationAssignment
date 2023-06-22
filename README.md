@@ -128,7 +128,6 @@ Make sure the following credentials are defined:
 
     # Store these values as secrete text that is used by Boto3 to authenticate with AWS
     cat ~/.aws/credentials
-![image](https://github.com/ArshaShiri/DevOpsBootcampPythonAutomationAssignment/assets/18715119/ba9d38c5-0968-472a-8857-3f97545d19a9)
-
-
-
+    
+The credentials to access ec2 instance via ssh should also be added as `SSH Username with private key`
+![image](https://github.com/ArshaShiri/DevOpsBootcampPythonAutomationAssignment/assets/18715119/608626fd-e198-4e41-b14e-d92b08d21246)
