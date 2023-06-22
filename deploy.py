@@ -23,6 +23,8 @@ stdin.close()
 
 print("Starting the container...")
 stdin, stdout, stderr = ssh.exec_command(f"docker run -p {host_port}:{container_port} -d {docker_image}")
+print("After command run..")
+print(stderr.readlines())
 print(stdout.readlines())
 stdin.close()
 
