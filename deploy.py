@@ -1,10 +1,8 @@
 import paramiko
 
-ssh_host = "3.121.196.12"
-ssh_user = "ec2-user"
-
-# Should be absolute path
-ssh_private_key = "/home/arsha/Downloads/python-automation-assignment.pem"
+ssh_host = os.environ['EC2_SERVER']
+ssh_user = os.environ['EC2_USER']
+ssh_private_key = os.environ['AWS_SSH_KEY']
 
 # SSH into the EC2 server
 ssh = paramiko.SSHClient()

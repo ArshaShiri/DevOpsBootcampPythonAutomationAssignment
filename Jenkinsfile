@@ -8,6 +8,11 @@ pipeline {
 
         ECR_REGISTRY = '849690659475.dkr.ecr.eu-central-1.amazonaws.com/java-maven-app'
 
+        // Used by deploy.py script
+        EC2_SERVER = '3.121.196.12'
+        EC2_USER = 'ec2-user'
+        AWS_SSH_KEY = credentials('aws-ec2-ssh')
+
         // Used by Boto3
         AWS_ACCESS_KEY_ID = credentials('jenkins_aws_access_key_id')
         AWS_SECRET_ACCESS_KEY = credentials('jenkins_aws_secret_access_key')
