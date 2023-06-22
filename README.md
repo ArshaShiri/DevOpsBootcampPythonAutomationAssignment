@@ -128,6 +128,7 @@ Make sure the following credentials are defined:
 
     # Store these values as secrete text that is used by Boto3 to authenticate with AWS
     cat ~/.aws/credentials
-![image](https://github.com/ArshaShiri/DevOpsBootcampPythonAutomationAssignment/assets/18715119/e219ef0e-580c-493d-95f1-6699e928b5fb)
+![image](https://github.com/ArshaShiri/DevOpsBootcampPythonAutomationAssignment/assets/18715119/ba9d38c5-0968-472a-8857-3f97545d19a9)
+
 
 
