@@ -1,4 +1,5 @@
 import paramiko
+import os
 
 ssh_host = os.environ['EC2_SERVER']
 ssh_user = os.environ['EC2_USER']
