@@ -6,7 +6,7 @@ pipeline {
         // Used by get-images.py and deploy.py script
         ECR_REPO_NAME = 'java-maven-app'
 
-        ECR_REGISTRY = '849690659475.dkr.ecr.eu-central-1.amazonaws.com/java-maven-app'
+        ECR_REGISTRY = '849690659475.dkr.ecr.eu-central-1.amazonaws.com/'
 
         // Used by deploy.py script
         EC2_SERVER = '3.121.196.12'
