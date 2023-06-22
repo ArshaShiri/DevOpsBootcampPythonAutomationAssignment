@@ -1,7 +1,7 @@
 import boto3
-from operator import itemgetter
+import os
 
-query_repository_name = "java-maven-app"
+query_repository_name = os.environ['ECR_REPO_NAME']
 
 ecr_client = boto3.client('ecr')
 images = ecr_client.describe_images(
@@ -9,13 +9,8 @@ images = ecr_client.describe_images(
     )
 
 image_tags = []
-
 for image in images['imageDetails']:
-    image_tags.append({
-        'tag': image['imageTags'],
-        'date': image['imagePushedAt']
-    })
+    image_tags.append(image['imageTags'][0])
 
-sorted_images_based_on_date = sorted(image_tags, key=itemgetter("date"), reverse=True)
-for image in sorted_images_based_on_date:
+for image in image_tags:
     print(image)
