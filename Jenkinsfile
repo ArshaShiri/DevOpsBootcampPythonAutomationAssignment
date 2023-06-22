@@ -3,7 +3,7 @@
 pipeline {
     agent any
     environment {
-        // Used by get-images.py script
+        // Used by get-images.py and deploy.py script
         ECR_REPO_NAME = 'java-maven-app'
 
         ECR_REGISTRY = '849690659475.dkr.ecr.eu-central-1.amazonaws.com/java-maven-app'
@@ -12,6 +12,10 @@ pipeline {
         EC2_SERVER = '3.121.196.12'
         EC2_USER = 'ec2-user'
         AWS_SSH_KEY = credentials('aws-ec2-ssh')
+        DOCKER_USER = 'AWS'
+        DOCKER_PWD = credentials('ecr-repo-pwd')
+        CONTAINER_PORT = '8080'
+        HOST_PORT = '8080'
 
         // Used by Boto3
         AWS_ACCESS_KEY_ID = credentials('jenkins_aws_access_key_id')
