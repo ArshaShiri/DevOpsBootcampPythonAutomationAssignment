@@ -123,3 +123,11 @@ We then need to install python dependencies on the container:
     pip install boto3
     pip install paramiko
     pip install requests
+
+Make sure the following credentials are defined:
+
+    # Store these values as secrete text that is used by Boto3 to authenticate with AWS
+    cat ~/.aws/credentials
+![image](https://github.com/ArshaShiri/DevOpsBootcampPythonAutomationAssignment/assets/18715119/e219ef0e-580c-493d-95f1-6699e928b5fb)
+
+
