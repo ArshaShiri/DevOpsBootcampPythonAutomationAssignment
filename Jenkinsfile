@@ -15,13 +15,13 @@ pipeline {
     }
 
     stages {
-        stage('select image version') {
+        stage('Select image version') {
             steps {
                script {
                   echo 'Fetching available image versions...'
                   def result = sh(script: 'python3 get-images.py', returnStdout: true).trim()
 
-                  // split returns an Array, but choices expects either List or String, so we do "as List"
+                  // Split returns an Array, but choices expects either List or String, so we do "as List"
                   def tags = result.split('\n') as List
                   version_to_deploy = input message: 'Select version to deploy', ok: 'Deploy', parameters: [choice(name: 'Select version', choices: tags)]
                   echo "selected tag is: ${version_to_deploy}" 
@@ -30,6 +30,16 @@ pipeline {
                   env.DOCKER_IMAGE = "${ECR_REGISTRY}/${ECR_REPO_NAME}:${version_to_deploy}"
                   echo "Seclected image is: ${env.DOCKER_IMAGE}"
                }
+            }
+        }
+
+        stage('Deploying image') {
+            steps {
+                script {
+                   echo 'Deploying selected docker image to EC2...'
+                   def result = sh(script: 'python3 deploy.py', returnStdout: true).trim()
+                   echo result
+                }
             }
         }
     }
